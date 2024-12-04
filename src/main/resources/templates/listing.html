@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Listing</title>
+</head>
+<body>
+
+    <form method="POST" action="/listing">
+        <table class="center-table">
+            <tr>
+                <td>
+                    Filter:
+                </td>
+                <td>
+                    <input type="text" name="filter">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Generate</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <br>
+
+    <table class="center-table border">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+        </tr>
+        <tr data-th-each="task: ${taskList}">
+            <td data-th-text="${task.id}"></td>
+            <td data-th-text="${task.name}"></td>
+            <td data-th-text="${task.description}"></td>
+            <td data-th-text="${task.due_date}"></td>
+            <td data-th-text="${task.priority}"></td>
+            <td data-th-text="${task.status}"></td>
+            <td data-th-text="${task.createdAt}"></td>
+            <td data-th-text="${task.updatedAt}"></td>
+            <td>
+                <form method="POST" action="/delete">
+                    <input type="hidden" name="delete" data-th-value="${task.id}">
+                    <button class="db-change red" type="submit">Delete</button>
+                </form>
+                <form method="POST" action="/update">
+                    <input type="hidden" name="update" data-th-value="${task.id}">
+                    <button class="db-change" type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <form method="POST" action="/logout">
+        <button type="submit">Logout</button>
+    </form>
+    
+</body>
+</html>

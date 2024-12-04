@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Add Task</title>
+</head>
+<body>
+
+    <h1 class="center">Add Todos</h1>
+
+    <form method="POST" action="/listing/new" data-th-object="${todo}">
+        <table class="center-table">
+            <tr>
+                <td>ID:</td>
+                <td>
+                    <input type="text" name="id" data-th-field="*{id}">
+                    <div data-th-if="${#fields.hasErrors('id')}"
+                        data-th-errors="*{id}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" name="name" data-th-field="*{name}">
+                    <div data-th-if="${#fields.hasErrors('name')}"
+                        data-th-errors="*{name}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>
+                    <input type="text" name="description" data-th-field="*{description}">
+                    <div data-th-if="${#fields.hasErrors('description')}"
+                        data-th-errors="*{description}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Due date:</td>
+                <td>
+                    <input type="date" name="due_date" data-th-field="*{due_date}">
+                    <div data-th-if="${#fields.hasErrors('due_date')}"
+                        data-th-errors="*{due_date}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Priority:</td>
+                <td>
+                    <input type="text" name="priority" data-th-field="*{priority}">
+                    <div data-th-if="${#fields.hasErrors('priority')}"
+                        data-th-errors="*{priority}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td>
+                    <input type="text" name="status" data-th-field="*{status}">
+                    <div data-th-if="${#fields.hasErrors('status')}"
+                        data-th-errors="*{status}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Created at:</td>
+                <td>
+                    <input type="date" name="createdAt" data-th-field="*{createdAt}">
+                    <div data-th-if="${#fields.hasErrors('createdAt')}"
+                        data-th-errors="*{createdAt}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Updated at:</td>
+                <td>
+                    <input type="date" name="updatedAt" data-th-field="*{updatedAt}">
+                    <div data-th-if="${#fields.hasErrors('updatedAt')}"
+                        data-th-errors="*{updatedAt}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

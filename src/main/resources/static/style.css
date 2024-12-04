@@ -1,0 +1,27 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.center-table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.border tr, .border th, .border td {
+    border: 1px solid black;
+}
+
+.db-change {
+    width: 70px;
+    text-align: center;
+    padding: 5px;
+}
+
+.red {
+    background-color: red;
+}
+
+.center {
+    text-align: center;
+}

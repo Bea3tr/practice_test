@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Update</title>
+</head>
+<body>
+
+    <form method="POST" action="/listing/update" data-th-object="${todo}">
+        <table class="center-table">
+            <tr>
+                <td>ID:</td>
+                <td>
+                    <input type="text" name="id" data-th-placeholder="${id}" data-th-value="${id}" data-th-field="${todo.id}" >
+                    <div data-th-if="${#fields.hasErrors('id')}"
+                        data-th-errors="*{id}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" name="name" data-th-placeholder="${name}" data-th-value="${name}" data-th-field="${todo.name}">
+                    <div data-th-if="${#fields.hasErrors('name')}"
+                        data-th-errors="*{name}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>
+                    <input type="text" name="description" data-th-placeholder="${description}" 
+                    data-th-value="${description}" data-th-field="${todo.description}">
+                    <div data-th-if="${#fields.hasErrors('description')}"
+                        data-th-errors="*{description}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Due date:</td>
+                <td>
+                    <input type="date" name="due_date" data-th-placeholder="${due_date}" 
+                    data-th-value="${due_date}" data-th-field="${todo.due_date}">
+                    <div data-th-if="${#fields.hasErrors('due_date')}"
+                        data-th-errors="*{due_date}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Priority:</td>
+                <td>
+                    <input type="text" name="priority" data-th-placeholder="${priority}" 
+                    data-th-value="${priority}" data-th-field="${todo.priority}">
+                    <div data-th-if="${#fields.hasErrors('priority')}"
+                        data-th-errors="*{priority}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td>
+                    <input type="text" name="status" data-th-placeholder="${status}" 
+                    data-th-value="${status}" data-th-field="${todo.status}">
+                    <div data-th-if="${#fields.hasErrors('status')}"
+                        data-th-errors="*{status}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Created at:</td>
+                <td>
+                    <input type="date" name="createdAt" data-th-placeholder="${createdAt}" 
+                    data-th-value="${createdAt}" data-th-field="${todo.createdAt}">
+                    <div data-th-if="${#fields.hasErrors('id')}"
+                        data-th-errors="*{createdAt}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Updated at:</td>
+                <td>
+                    <input type="date" name="updatedAt" data-th-placeholder="${updatedAt}" 
+                    data-th-value="${updatedAt}" data-th-field="${todo.updatedAt}">
+                    <div data-th-if="${#fields.hasErrors('updatedAt')}"
+                        data-th-errors="*{updatedAt}" data-th-class="error">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
